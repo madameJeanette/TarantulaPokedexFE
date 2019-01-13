@@ -1,8 +1,8 @@
-# Crazy Cat Lady PokeDex
+# Tarantula PokeDex
 
-## cats-vue
+## spiders-vue
 ```
-A cat pokedex for all your crazy cat lady needs. =^^=
+A tarantula index for all your spider collecting needs. =^^=
 Simple list app with name input and local storage.
 ```
 
