@@ -1,19 +1,21 @@
 <template>
   <div id="app">
-   
-   <IlTts/>
+      <IlTts/>
+      <Tt/>
   </div>
 </template>
 
 <script>
 
 import IlTts from './components/IlTts'
+import Tt from './components/Tt'
 
 export default {
   name: 'App',
   components: {
     
-    IlTts
+    IlTts,
+    Tt
   }
 }
 </script>
