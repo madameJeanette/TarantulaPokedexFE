@@ -1,31 +1,29 @@
 <template>
-  <div class="tt">
-    {{ tt }}
-  </div>
+  <div class="tt">{{ tt }}</div>
 </template>
 
 <script>
-
-import axios from 'axios'
+import axios from "axios";
 
 export default {
-  name: 'Tt',
-  data () {
+  name: "Tt",
+  data() {
     return {
       tt: {} //return spiders
-    }
+    };
   },
-  created () {
-    axios.get('http://localhost:8000/api/tarantulas')
+  created() {
+    axios
+      .get("http://localhost:8000/api/tarantulas")
       .then(response => {
-        //console.log(response)
-        this.tt = response.data
+        console.log(response);
+        this.tt = response.data;
       })
       .catch(err => {
-        console.log(err)
-      })
+        console.log(err);
+      });
   }
-}
+};
 </script>
 
 <style scoped></style>

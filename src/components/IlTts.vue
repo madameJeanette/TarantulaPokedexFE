@@ -14,7 +14,7 @@
     <p>I love spiders</p>
 
     <ul>
-      <li v-bind:key = "tt.id" v-for="tt in tts">{{tt}}</li>
+      <li v-bind:key="tt.id" v-for="tt in tts">{{tt}}</li>
     </ul>
   </div>
 </template>
