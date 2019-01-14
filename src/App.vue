@@ -1,19 +1,19 @@
 <template>
   <div id="app">
    
-   <IlCats/>
+   <IlTts/>
   </div>
 </template>
 
 <script>
 
-import IlCats from './components/IlCats'
+import IlTts from './components/IlTts'
 
 export default {
   name: 'App',
   components: {
     
-    IlCats
+    IlTts
   }
 }
 </script>
