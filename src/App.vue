@@ -1,19 +1,41 @@
 <template>
   <div id="app">
-    <IlTts/>
+    <Tts v-bind:tts="tts"/>
     <Tt/>
   </div>
 </template>
 
 <script>
-import IlTts from "./components/IlTts";
-import Tt from "./components/Tt";
+import Tts from "./components/Tts";
 
 export default {
   name: "App",
   components: {
-    IlTts,
-    Tt
+    Tts
+  },
+  data() {
+    return {
+      tts: [
+        {
+          id: 1,
+          name: "Grace",
+          latinName: "Yberapora diversipes",
+          collected: true
+        },
+        {
+          id: 1,
+          name: "Scarlett",
+          latinName: "Caribena diversipes",
+          collected: true
+        },
+        {
+          id: 1,
+          name: "Mr. Fuzzy ",
+          latinName: "brachypelma xxx",
+          collected: false
+        }
+      ]
+    };
   }
 };
 </script>
