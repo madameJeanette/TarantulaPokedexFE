@@ -1,7 +1,10 @@
 <template>
   <div id="app">
+     <h1>Tarantula PokeDex</h1>
+    
+
     <Tts v-bind:tts="tts"/>
-    <Tt/>
+    
   </div>
 </template>
 
@@ -15,29 +18,32 @@ export default {
   },
   data() {
     return {
-      tts: [
-        {
-          id: 1,
-          name: "Grace",
-          latinName: "Yberapora diversipes",
-          collected: true
-        },
-        {
-          id: 1,
-          name: "Scarlett",
-          latinName: "Caribena diversipes",
-          collected: true
-        },
-        {
-          id: 1,
-          name: "Mr. Fuzzy ",
-          latinName: "brachypelma xxx",
-          collected: false
-        }
-      ]
-    };
+     tts: [],
+             
+    }
+  },
+
+  methods: {
+    removeTt(id){
+      axios.delete(`http://localhost:8000/api/tarantulas/${id}`)
+      .then(res => this.tts.filter(tt => tt.id !== id))
+      .catch(err => console.log(err));
+    },
+
+    addTt(newTt) {
+      const { name, latinName, habitat} = newTt;
+      
+      axios.post("http://localhost:8000/api/tarantulas", {
+        name, latinName, habitat
+      })
+      .then(res =>  this.tts = [...this.tts, res.data])
+      .catch(err => console.log(err));
+    }
+     
   }
-};
+  
+  
+}
 </script>
 
 <style>
