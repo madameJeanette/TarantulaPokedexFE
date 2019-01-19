@@ -1,37 +1,58 @@
 <template>
   <div>
-    <form>
-      <input type="text" name="name" placeholder="New spider">
-      <input type="text" latinName:="latinName" placeholder="latinName" v-model="tt">
-      <input type="text" habitat:="habitat" placeholder="Habitat" v-model="tt">
-      <input
-        type="submit"
-        value="submit"
-        class="btn"
-      >
+    <form @submit="addTt">
+      <input type="text" v-model="name" name="name" placeholder="New spider" >
+      <input type="text"  v-model="latinName" name="latinName" placeholder="latinName" >
+      <input type="text"  v-model="habitat" name="habitat" placeholder="Habitat" >
+      <input type="submit" value="Submit" class="btn">
     </form>
   </div>
 </template>
 
 <script>
+
 export default {
   name: "AddTt",
-  latinName: "AddTt",
-  habitat: "AddTt"
-};
+  data() {
+    return {
+      name: '',
+      latinName: '',
+      habitat: ''
+    }
+  },
+  methods: {
+    addTt(e) {
+      e.preventDefault();
+      const newTt = {
+       
+        name: this.name,
+        latinName: this.latinName,
+        habitat: this.habitat,
+        collected: false
+      }
+
+      //Send up to parent
+      this.$emit('add-tt', newTt);
+
+      this.name = '';
+      this.latinName= "";
+      this.habitat= "";
+    }
+  }
+}
 </script>
 
 <style scoped>
-form {
-  display: flex;
-}
-input[type="text"] {
-  flex: 10;
-  padding: 5px;
-}
-input[type="submit"] {
-  flex: 2;
-}
+  form {
+    display: flex;
+  }
+  input[type="text"] {
+    flex: 10;
+    padding: 5px;
+  }
+  input[type="submit"] {
+    flex: 2;
+  }
 </style>
 
 
