@@ -1,24 +1,12 @@
 <template>
   <div>
     <h4>Add your new spiders to your collection!</h4>
-
-    <!-- <div class="input-form">
-      <form>
-        <input type="text" id="name" value="Name" v-model="tt">
-        <label for="name">Name</label>
-        <input type="text" id="latinName" value="latinName" v-model="tt">
-        <label for="latinName">Latin Name</label>
-        <input type="text" id="habitat" value="Habitat" v-model="tt">
-        <label for="habitat">Habitat</label>
-      </form>
-    </div>
-
     <img
       src="../assets/1st spooder.jpg"
       alt="Red and black striped tarantula spider"
       width="700"
       height="auto"
-    > -->
+    > 
     <div v-bind:key="tt.id" v-for="tt in tts">
       <TtItem v-bind:tt="tt" v-on:del-tt="$emit('del-tt',tt.id)"/>
     </div>

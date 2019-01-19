@@ -1,18 +1,24 @@
 <template>
   <div id="app">
-    <h1>Tarantula PokeDex</h1>
-
-    <Tts v-bind:tts="tts" v-on:del-tt="deleteTt"/>
+    <Header />
+    <AddTt/>
+    <Tts v-bind:tts="tts"
+    v-on:del-tt="deleteTt"/>
   </div>
 </template>
 
 <script>
+import Header from "./components/layout/Header";
 import Tts from "./components/Tts";
+import AddTt from "./components/AddTt";
+
 
 export default {
   name: "App",
   components: {
-    Tts
+    Header,
+    Tts,
+    AddTt
   },
   data() {
     return {
@@ -86,13 +92,29 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}
+
+.btn{
+  display: inline-block;
+  border:none;
+  background: #555;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #666;
+}
+
 </style>
 
