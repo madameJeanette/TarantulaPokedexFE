@@ -30,7 +30,7 @@ export default {
     deleteTt(id) {
       axios
         .delete(`http://localhost:8000/api/tarantulas/${id}`)
-        .then(response => (this.tts = this.tts.filter(tt => tt.id !== id)))
+        .then(res => (this.tts = this.tts.filter(tt => tt.id !== id)))
         .catch(err => console.log(err));
     },
 

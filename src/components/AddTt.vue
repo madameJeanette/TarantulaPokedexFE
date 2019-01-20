@@ -17,7 +17,8 @@ export default {
     return {
       name: '',
       latinName: '',
-      habitat: ''
+      habitat: '',
+      collected: false
     }
   },
   methods: {
