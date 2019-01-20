@@ -1,4 +1,5 @@
-import App from "./App";
+
+import App from './App'
 
 Vue.config.productionTip = false;
 

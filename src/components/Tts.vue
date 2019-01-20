@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-bind:key="tt.id" v-for="tt in tts">
-      <TtItem v-bind:tt="tt" v-on:del-tt="$emit('del-tt',tt.id)"/>
+      <TtItem v-bind:tt="tt" v-on:del-tt="$emit('del-tt',tt._id)"/>
     </div>
   </div>
 </template>

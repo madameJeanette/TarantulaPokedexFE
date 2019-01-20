@@ -2,11 +2,12 @@
   <div class="tt-item" v-bind:class="{'is-collected':tt.collected}">
     <p>Collected: <input type="checkbox" v-on:change="markCollected"></p>
     <h4>{{tt.name}}</h4>
-    <button @click="$emit('del-tt',tt.id)" class="del">x</button>
+    <button @click="$emit('del-tt',tt._id)" class="del">x</button>
     <p>
       Latin name: {{tt.latinName}}
       <br>
-      Habitat: {{tt.habitat}}
+      Habitat: {{tt.habitat}}<br>
+      Collected: {{tt.collected}}
     
     </p>
   </div>

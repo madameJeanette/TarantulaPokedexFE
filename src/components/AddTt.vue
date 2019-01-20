@@ -4,6 +4,7 @@
       <input type="text" v-model="name" name="name" placeholder="New spider" >
       <input type="text"  v-model="latinName" name="latinName" placeholder="latinName" >
       <input type="text"  v-model="habitat" name="habitat" placeholder="Habitat" >
+      
       <input type="submit" value="Submit" class="btn">
     </form>
   </div>
@@ -18,7 +19,7 @@ export default {
       name: '',
       latinName: '',
       habitat: '',
-      collected: false
+      
     }
   },
   methods: {
@@ -38,6 +39,7 @@ export default {
       this.name = '';
       this.latinName= "";
       this.habitat= "";
+      
     }
   }
 }

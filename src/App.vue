@@ -26,19 +26,20 @@ export default {
     };
   },
 
-  methods: {
-    deleteTt(id) {
-      axios
-        .delete(`http://localhost:8000/api/tarantulas/${id}`)
-        .then(res => (this.tts = this.tts.filter(tt => tt.id !== id)))
+   methods: {
+    deleteTt(_id) {
+        
+      axios.delete(`http://localhost:8000/api/tarantulas/${_id}`)
+  
+        .then(res => this.tts = this.tts.filter(tt => tt._id !== _id))
         .catch(err => console.log(err));
+        
     },
 
     addTt(newTt) {
       const { name, latinName, habitat, collected } = newTt;
 
-      axios
-        .post("http://localhost:8000/api/tarantulas", {
+      axios.post("http://localhost:8000/api/tarantulas", {
           name,
           latinName,
           habitat,
@@ -46,7 +47,7 @@ export default {
         })
 
         .then(response => (this.tts = [...this.tts, response.data]))
-        .catch(err => console.log(err));
+        .catch(error => console.log(error));
     }
   },
   created() {
